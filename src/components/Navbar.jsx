@@ -13,7 +13,7 @@ export default function Navbar() {
         to="/" 
         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
       >
-        📋 자산 관리 테이블
+        📋 자산 관리
       </NavLink>
       <NavLink 
         to="/chart" 
