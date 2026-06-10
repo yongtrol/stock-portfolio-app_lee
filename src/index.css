@@ -1,0 +1,263 @@
+/* 기본 초기화 및 배경 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #383636;
+  color: #ffffff;
+  padding: 32px 16px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #374151;
+}
+
+/* 2.2 UI 개선 - 상단 요약 대시보드 카드 */
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.card-title {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #111827;
+}
+
+/* 메인 콘텐츠 레이아웃 (폼 & 리스트) */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* 폼 스타일 */
+.stock-form {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  height: fit-content;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* 2.2 UI 개선 - 버튼 스타일 */
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #fca5a5;
+}
+
+/* 테이블 스타일 */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+  color: #374151;
+}
+
+table tbody td {
+  color: #1f2937 !important;
+}
+
+th {
+  background-color: #f9fafb;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.stock-name {
+  font-weight: bold;
+  color: #111827;
+}
+
+.input-price {
+  width: 80px;
+  padding: 4px 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* 수익률 조건부 색상 변경 */
+.stock-roi {
+  font-weight: bold;
+}
+
+.positive {
+  color: #dc2626; /* 상승: 빨간색 */
+}
+
+.negative {
+  color: #2563eb; /* 하락: 파란색 */
+}
+
+.empty-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 32px 0;
+}
+
+/* index.css 맨 밑에 추가 */
+.navbar {
+  background-color: #ffffff;
+  padding: 0 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 600;
+  padding: 16px 4px;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+}
+
+/* 현재 선택된 메뉴 강조 스타일 */
+.nav-link.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.page-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* index.css 맨 마지막 줄에 그대로 붙여넣기 */
+.chart-container {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  margin-top: 24px;
+  height: 400px;        /* 🔥 Recharts가 그려질 확실한 높이 제공 */
+  box-sizing: border-box;
+}
+
+.chart-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #374151 !important; /* 🔥 차트 제목 색상 검은색 계열로 고정 */
+}
